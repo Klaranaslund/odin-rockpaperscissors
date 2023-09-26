@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 /*game function that loops over function playRound() until computer or player
-reaches a score of three, rather than a best of five because of ties*/
+reaches a score of three */
 function game() {
     let player = 0;
     let computer = 0;
@@ -52,7 +52,8 @@ function game() {
         computer++;
     }}
     
-    if (player >= 3) {
+    //if player has gotten score of three they are the winner, else computer has gotten a score of three and has won
+    if (player == 3) {
         console.log("You win!");
     } else {
         console.log("You lose!");
