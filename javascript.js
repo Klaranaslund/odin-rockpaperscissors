@@ -31,10 +31,10 @@ function playRound(playerSelection, computerSelection) {
        (playerSelection == "paper" && computerSelection == "rock")
    ) {
        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-       return 1;
+       return true;
    } else {
        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-       return -1;
+       return false;
    }
 }
 
@@ -42,12 +42,17 @@ function playRound(playerSelection, computerSelection) {
 /*game function that loops over function playRound() until computer or player
 reaches a score of three, rather than a best of five because of ties*/
 function game() {
-    let score = 0;
-    while (score < 3 && score > -3) {
-        score = score + playRound(getPlayerChoice(), getComputerChoice());
-    }
+    let player = 0;
+    let computer = 0;
+
+    while (player <3 || computer <3) {
+        if (playRound(getPlayerChoice(), getComputerChoice())){
+            player++;
+    }else{
+        computer++;
+    }}
     
-    if (score >= 3) {
+    if (player >= 3) {
         console.log("You win!");
     } else {
         console.log("You lose!");
