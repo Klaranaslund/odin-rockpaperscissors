@@ -17,7 +17,6 @@ function getPlayerChoice(){
   }
 
 //function to compare computer and player selection and thus decide who wins a single round. 
-//Returns 0 for a tie, 1 if player wins, -1 if computer wins.
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
        console.log("It's A tie");
