@@ -71,3 +71,5 @@ function game() {
         console.log("You lose!");
     }
 }
+
+game();
