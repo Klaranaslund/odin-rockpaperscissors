@@ -4,16 +4,33 @@
 //function to get a randomized choice of rock paper or scissors from the computer
 function getComputerChoice(){
     const strings = ["rock", "paper", "scissors"];
-
     const randomindex = Math.floor(Math.random() * strings.length);
     const choice = strings[randomindex];
     return choice;
   }
 
 //Get choice of rock, paper or scissors from player
+
 function getPlayerChoice(){
-   // const choice = prompt("Enter your choice");
-    return choice.toLowerCase();
+    let playerChoice = '';
+
+    let rockbtn = document.querySelector('.rockbutton');
+    let paperbtn = document.querySelector('.paperbutton');
+    let scissorbtn = document.querySelector('.scissorbutton');
+    
+    rockbtn.addEventListener('click', ()=>{
+        playerChoice = 'rock';
+    });
+    
+    paperbtn.addEventListener('click', ()=>{
+        playerChoice = 'paper';
+    });
+    
+    scissorbtn.addEventListener('click', ()=>{
+        playerChoice = 'scissor';
+    });
+    
+    return playerChoice;
   }
 
 //function to compare computer and player selection and thus decide who wins a single round. 
