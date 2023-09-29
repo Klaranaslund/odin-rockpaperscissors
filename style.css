@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 96, 117);
+    flex-direction: column;
+}
+
+.header{
+    padding: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: pink;
+    flex-direction: row;
+}
+
+.rock,.paper,.scissors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    padding: 50px;
+}
+
+.pointsdiv{
+    padding: 50px;
+}

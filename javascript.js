@@ -12,7 +12,7 @@ function getComputerChoice(){
 
 //Get choice of rock, paper or scissors from player
 function getPlayerChoice(){
-    const choice = prompt("Enter your choice");
+   // const choice = prompt("Enter your choice");
     return choice.toLowerCase();
   }
 
