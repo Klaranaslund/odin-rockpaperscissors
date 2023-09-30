@@ -5,6 +5,7 @@ let paperbtn = document.querySelector('.paperbutton');
 let scissorbtn = document.querySelector('.scissorbutton');
 let roundscore = document.querySelector('.roundscore');
 let finalscore = document.querySelector('.finalscore');
+let winner = document.querySelector('.winner');
 
 let computerscore = 0;
 let playerscore = 0;
@@ -52,13 +53,21 @@ function displayScore(player, computer){
     playerscore += player;
     computerscore += computer;
 
+    finalscore.textContent = `Player: ${playerscore} Computer: ${computerscore}`
+
     if(playerscore >=3){
-        finalscore.textContent = `Player: ${playerscore} Computer: ${computerscore} - Player Wins!`  ;
+        announceWinner('player');
     
     }else if(computerscore >= 3){
-        finalscore.textContent = `Player: ${playerscore} Computer: ${computerscore} - Computer Wins!`  ;
-    }else finalscore.textContent = `Player: ${playerscore} Computer: ${computerscore}` ;
+        announceWinner('computer');
+    }  
+}
 
-    
+function announceWinner(win){
+    if(win == 'computer'){
+        winner.textContent = `Computer Wins!`  ;
+    }else if(win == 'player'){
+        winner.textContent = `Player Wins!`  ;
+    }    
 }
 

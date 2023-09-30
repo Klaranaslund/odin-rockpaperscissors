@@ -30,6 +30,9 @@ body{
     padding: 50px;
 }
 
-.rouncscore,.finalscore{
-    padding: 50px;
+.roundscore,.finalscore{
+    padding: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+
 }
