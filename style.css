@@ -7,7 +7,7 @@ body{
 }
 
 .header{
-    padding: 150px;
+    padding: 120px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 45px;
     display: flex;
@@ -16,23 +16,38 @@ body{
 
 .container{
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items: center;
     background-color: pink;
     flex-direction: row;
+    border-radius: 8px;
 }
 
 .rock,.paper,.scissors{
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: pink;
-    padding: 50px;
+    padding: 120px 50px 120px 50px;
+}
+
+button{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    background-color: palevioletred;
+    border-radius: 8px;
 }
 
 .roundscore,.finalscore{
     padding: 35px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
+
+}
+
+.winner{
+    padding: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 46px;
+    color: green;
 
 }
