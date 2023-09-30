@@ -10,7 +10,8 @@ let winner = document.querySelector('.winner');
 let computerscore = 0;
 let playerscore = 0;
 
-//function to get a randomized choice of rock paper or scissors from the computer
+/* Get randomized choice of rock paper or scissors to act as
+computers choice*/
 function getComputerChoice(){
     const strings = ["rock", "paper", "scissors"];
     const randomindex = Math.floor(Math.random() * strings.length);
@@ -30,7 +31,8 @@ scissorbtn.addEventListener('click', ()=>{
         playRound('scissors', getComputerChoice());
         });
 
-//function to compare computer and player selection and thus decide who wins a single round. 
+/* Play a round by comparing the players selection to the computer selection, 
+call displayscore accordingly*/
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
        roundscore.textContent = "It's a tie";
@@ -49,6 +51,8 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
+/* Display the current score, and call announceWinner and resetScore if player or
+computer reaches a score of 3.*/
 function displayScore(player, computer){
     playerscore += player;
     computerscore += computer;
@@ -57,9 +61,11 @@ function displayScore(player, computer){
 
     if(playerscore >=3){
         announceWinner('player');
-    
+        resetScore();
+      
     }else if(computerscore >= 3){
         announceWinner('computer');
+        resetScore();
     }  
 }
 
@@ -69,5 +75,12 @@ function announceWinner(win){
     }else if(win == 'player'){
         winner.textContent = `Player Wins!`  ;
     }    
+}
+
+/* Resets the scores for player and computer, should clear the winner textcontent but keep
+getting a bug when trying to do so*/
+function resetScore(){
+    playerscore = 0;
+    computerscore = 0;
 }
 
