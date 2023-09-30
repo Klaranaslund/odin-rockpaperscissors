@@ -46,7 +46,7 @@ function playRound(playerSelection, computerSelection) {
         roundscore.textContent = `You win the round! ${playerSelection} beats ${computerSelection}` ;
         displayScore(1,0);
    } else {
-    roundscore.textContent = `You lose the round! ${playerSelection} beats ${computerSelection}` ;
+    roundscore.textContent = `You lose the round! ${computerSelection} beats ${playerSelection}` ;
     displayScore(0,1);
    }
 }
