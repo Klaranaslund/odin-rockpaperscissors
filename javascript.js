@@ -1,5 +1,9 @@
 /* Rock Paper Scissors game with computer, to be played in the  */
 
+let rockbtn = document.querySelector('.rockbutton');
+let paperbtn = document.querySelector('.paperbutton');
+let scissorbtn = document.querySelector('.scissorbutton');
+let roundscore = document.querySelector('.roundscore');
 
 //function to get a randomized choice of rock paper or scissors from the computer
 function getComputerChoice(){
@@ -8,35 +12,23 @@ function getComputerChoice(){
     const choice = strings[randomindex];
     return choice;
   }
-
-//Get choice of rock, paper or scissors from player
-
-function getPlayerChoice(){
-    let playerChoice = '';
-
-    let rockbtn = document.querySelector('.rockbutton');
-    let paperbtn = document.querySelector('.paperbutton');
-    let scissorbtn = document.querySelector('.scissorbutton');
     
-    rockbtn.addEventListener('click', ()=>{
-        playerChoice = 'rock';
-    });
+rockbtn.addEventListener('click', ()=>{
+        playRound('rock', getComputerChoice());
+        });
     
-    paperbtn.addEventListener('click', ()=>{
-        playerChoice = 'paper';
-    });
+paperbtn.addEventListener('click', ()=>{
+        playRound('paper', getComputerChoice());
+        });
     
-    scissorbtn.addEventListener('click', ()=>{
-        playerChoice = 'scissor';
-    });
-    
-    return playerChoice;
-  }
+scissorbtn.addEventListener('click', ()=>{
+        playRound('scissors', getComputerChoice());
+        });
 
 //function to compare computer and player selection and thus decide who wins a single round. 
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
-       console.log("It's A tie");
+       roundscore.textContent = "It's a tie";
        return 0;
 
    } else if (
@@ -44,32 +36,10 @@ function playRound(playerSelection, computerSelection) {
        (playerSelection == "scissors" && computerSelection == "paper") ||
        (playerSelection == "paper" && computerSelection == "rock")
    ) {
-       console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+        roundscore.textContent = `You win! ${playerSelection} beats ${computerSelection}` ;
        return true;
    } else {
-       console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-       return false;
+    roundscore.textContent = `You lose! ${playerSelection} beats ${computerSelection}` ;
+    return false;
    }
 }
-
-
-/*Loop over function playRound() until computer or player reaches a score of three */
-function game() {
-    let player = 0;
-    let computer = 0;
-
-    while (player <3 || computer <3) {
-        if (playRound(getPlayerChoice(), getComputerChoice())){
-            player++;
-    }else{
-        computer++;
-    }}
-    
-    if (player == 3) {
-        console.log("You win!");
-    } else {
-        console.log("You lose!");
-    }
-}
-
-game();
