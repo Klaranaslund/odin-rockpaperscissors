@@ -1,1 +1,1 @@
-Simple game of rock paper scissors.
+Simple game of rock paper scissors using JavaScript, HTML and CSS.
